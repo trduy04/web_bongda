@@ -1,0 +1,205 @@
+.filter-bar {
+	background-color: #2d2d2d;
+	border-radius: 8px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	padding: 1rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+	
+	.filter-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		
+		.filter-buttons {
+			display: flex;
+			gap: 0.5rem;
+			
+			.filter-btn {
+				padding: 0.5rem 1rem;
+				border-radius: 6px;
+				font-size: 0.875rem;
+				font-weight: 500;
+				border: none;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				
+				&.active {
+					background-color: #ef4444;
+					color: white;
+				}
+				
+				&:not(.active) {
+					background-color: #404040;
+					color: #e5e5e5;
+					
+					&:hover {
+						background-color: #525252;
+					}
+				}
+			}
+		}
+		
+		.date-selector {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			
+			.nav-btn {
+				padding: 0.5rem;
+				border-radius: 6px;
+				border: none;
+				background: none;
+				cursor: pointer;
+				color: #d1d5db;
+				transition: background-color 0.2s ease;
+				
+				&:hover {
+					background-color: #404040;
+				}
+			}
+			
+			.date-buttons {
+				display: flex;
+				gap: 0.25rem;
+				
+				.date-btn {
+					padding: 0.5rem 0.75rem;
+					border-radius: 6px;
+					font-size: 0.875rem;
+					font-weight: 500;
+					border: none;
+					cursor: pointer;
+					transition: all 0.2s ease;
+					
+					&.active {
+						background-color: #3b82f6;
+						color: white;
+					}
+					
+					&:not(.active) {
+						background-color: #404040;
+						color: #e5e5e5;
+						
+						&:hover {
+							background-color: #525252;
+						}
+					}
+					
+					.date-content {
+						display: flex;
+						align-items: center;
+						gap: 0.25rem;
+					}
+				}
+				
+
+			}
+		}
+	}
+	
+	/* Date Picker Modal */
+	.date-picker-modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 1000;
+		
+		.date-picker-content {
+			background-color: #2d2d2d;
+			border-radius: 12px;
+			padding: 1.5rem;
+			min-width: 300px;
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+			
+			.date-picker-header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 1rem;
+				
+				h3 {
+					color: #e5e5e5;
+					margin: 0;
+					font-size: 1.125rem;
+					font-weight: 600;
+				}
+				
+				.close-btn {
+					background: none;
+					border: none;
+					color: #9ca3af;
+					font-size: 1.25rem;
+					cursor: pointer;
+					padding: 0.25rem;
+					border-radius: 4px;
+					transition: color 0.2s ease;
+					
+					&:hover {
+						color: #e5e5e5;
+					}
+				}
+			}
+			
+			.date-picker-body {
+				.date-input {
+					width: 100%;
+					padding: 0.75rem;
+					border: 1px solid #404040;
+					border-radius: 6px;
+					background-color: #1f1f1f;
+					color: #e5e5e5;
+					font-size: 1rem;
+					margin-bottom: 1rem;
+					
+					&:focus {
+						outline: none;
+						border-color: #3b82f6;
+					}
+				}
+				
+				.date-picker-actions {
+					display: flex;
+					gap: 0.75rem;
+					justify-content: flex-end;
+					
+					.cancel-btn,
+					.confirm-btn {
+						padding: 0.5rem 1rem;
+						border-radius: 6px;
+						font-size: 0.875rem;
+						font-weight: 500;
+						border: none;
+						cursor: pointer;
+						transition: all 0.2s ease;
+					}
+					
+					.cancel-btn {
+						background-color: #404040;
+						color: #e5e5e5;
+						
+						&:hover {
+							background-color: #525252;
+						}
+					}
+					
+					.confirm-btn {
+						background-color: #3b82f6;
+						color: white;
+						
+						&:hover {
+							background-color: #2563eb;
+						}
+					}
+				}
+			}
+		}
+	}
+}

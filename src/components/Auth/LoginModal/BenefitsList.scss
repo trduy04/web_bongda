@@ -1,0 +1,18 @@
+.benefits {
+	margin-bottom: 1.5rem;
+
+	.benefit-item {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 0.75rem;
+		color: rgba(255, 255, 255, 0.9);
+		font-size: 0.95rem;
+
+		.benefit-icon {
+			font-size: 1.25rem;
+			width: 24px;
+			text-align: center;
+		}
+	}
+}

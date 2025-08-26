@@ -1,0 +1,117 @@
+.match-item {
+	display: flex;
+	align-items: center;
+	padding: 0.75rem 1rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	background-color: transparent;
+	transition: background-color 0.2s ease;
+	
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.05);
+	}
+	
+	.match-status {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-right: 1rem;
+		min-width: 60px;
+		
+		.favorite-btn {
+			background: none;
+			border: none;
+			cursor: pointer;
+			padding: 0;
+			margin-bottom: 0.25rem;
+			
+			.star-icon {
+				font-size: 1rem;
+				color: rgba(255, 255, 255, 0.6);
+				transition: color 0.2s ease;
+			}
+			
+			&.active .star-icon {
+				color: #fbbf24;
+			}
+			
+			&:hover .star-icon {
+				color: #fbbf24;
+			}
+		}
+		
+		.status-text {
+			font-size: 0.75rem;
+			color: rgba(255, 255, 255, 0.8);
+			font-weight: 500;
+		}
+	}
+	
+	.match-details {
+		flex: 1;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		
+		.team {
+			display: flex;
+			align-items: center;
+			flex: 1;
+			
+			&.home-team {
+				justify-content: flex-start;
+				
+				.team-logo {
+					margin-right: 0.75rem;
+				}
+				
+				.team-score {
+					margin-left: auto;
+				}
+			}
+			
+			&.away-team {
+				justify-content: flex-end;
+				
+				.team-logo {
+					margin-left: 0.75rem;
+				}
+				
+				.team-score {
+					margin-right: auto;
+				}
+			}
+			
+			.team-logo {
+				width: 24px;
+				height: 24px;
+				border-radius: 50%;
+				overflow: hidden;
+				flex-shrink: 0;
+				
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			
+			.team-name {
+				font-size: 0.875rem;
+				color: #ffffff;
+				font-weight: 500;
+				max-width: 120px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			
+			.team-score {
+				font-size: 1rem;
+				color: #ffffff;
+				font-weight: 600;
+				min-width: 20px;
+				text-align: center;
+			}
+		}
+	}
+}

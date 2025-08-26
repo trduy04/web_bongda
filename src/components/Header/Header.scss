@@ -1,0 +1,235 @@
+.header {
+	background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+	color: white;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+
+	.header-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0.75rem 2rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+		.logo {
+			display: flex;
+			align-items: center;
+			font-size: 1.5rem;
+			font-weight: bold;
+			text-decoration: none;
+			color: white;
+
+			.logo-arrow {
+				color: #ef4444;
+				margin-right: 0.5rem;
+				font-size: 1.2rem;
+			}
+		}
+
+		.header-actions {
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+
+			.search-container {
+				position: relative;
+				display: flex;
+				align-items: center;
+
+				.search-input {
+					background: rgba(255, 255, 255, 0.1);
+					border: 1px solid rgba(255, 255, 255, 0.2);
+					border-radius: 20px;
+					padding: 0.5rem 1rem 0.5rem 2.5rem;
+					color: white;
+					font-size: 0.875rem;
+					width: 200px;
+					transition: all 0.3s ease;
+
+					&::placeholder {
+						color: rgba(255, 255, 255, 0.7);
+					}
+
+					&:focus {
+						outline: none;
+						background: rgba(255, 255, 255, 0.15);
+						border-color: rgba(255, 255, 255, 0.3);
+						width: 250px;
+					}
+				}
+
+				.search-icon {
+					position: absolute;
+					left: 0.75rem;
+					color: rgba(255, 255, 255, 0.7);
+					font-size: 1rem;
+				}
+			}
+
+			.action-btn {
+				background: rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 6px;
+				padding: 0.5rem 1rem;
+				color: white;
+				font-size: 0.875rem;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				display: flex;
+				align-items: center;
+				gap: 0.25rem;
+
+				&:hover {
+					background: rgba(255, 255, 255, 0.2);
+					transform: translateY(-1px);
+				}
+
+				&.login-btn {
+					background: #ef4444;
+					border-color: #ef4444;
+
+					&:hover {
+						background: #dc2626;
+					}
+				}
+			}
+		}
+	}
+
+	.navigation {
+		padding: 0.75rem 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+		overflow-x: auto;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		.sport-btn {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			padding: 0.5rem 1rem;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			white-space: nowrap;
+			font-size: 0.875rem;
+			position: relative;
+
+			.sport-icon {
+				font-size: 1.25rem;
+			}
+
+			&.active {
+				color: white;
+				background: rgba(255, 255, 255, 0.1);
+
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: -0.75rem;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 80%;
+					height: 3px;
+					background: #ef4444;
+					border-radius: 2px;
+				}
+			}
+
+			&:not(.active) {
+				color: rgba(255, 255, 255, 0.7);
+
+				&:hover {
+					color: white;
+					background: rgba(255, 255, 255, 0.05);
+				}
+			}
+		}
+
+		.more-sports {
+			display: flex;
+			align-items: center;
+			gap: 0.25rem;
+			color: rgba(255, 255, 255, 0.7);
+			cursor: pointer;
+			padding: 0.5rem 1rem;
+			border-radius: 8px;
+			transition: all 0.3s ease;
+			font-size: 0.875rem;
+
+			&:hover {
+				color: white;
+				background: rgba(255, 255, 255, 0.05);
+			}
+
+			.dropdown-arrow {
+				font-size: 0.75rem;
+				transition: transform 0.3s ease;
+			}
+
+			&:hover .dropdown-arrow {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+// Responsive design
+@media (max-width: 768px) {
+	.header {
+		.header-top {
+			padding: 0.5rem 1rem;
+
+			.logo {
+				font-size: 1.25rem;
+			}
+
+			.header-actions {
+				gap: 0.5rem;
+
+				.search-container {
+					.search-input {
+						width: 150px;
+
+						&:focus {
+							width: 180px;
+						}
+					}
+				}
+
+				.action-btn {
+					padding: 0.375rem 0.75rem;
+					font-size: 0.75rem;
+				}
+			}
+		}
+
+		.navigation {
+			padding: 0.5rem 1rem;
+			gap: 1rem;
+
+			.sport-btn {
+				padding: 0.375rem 0.75rem;
+				font-size: 0.75rem;
+
+				.sport-icon {
+					font-size: 1rem;
+				}
+			}
+
+			.more-sports {
+				padding: 0.375rem 0.75rem;
+				font-size: 0.75rem;
+			}
+		}
+	}
+}

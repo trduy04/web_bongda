@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Đảm bảo background tràn hết màn hình */
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: #0f172a; /* slate-900 */
+	overflow-x: hidden;
+}
+
+#root {
+	min-height: 100vh;
+	background-color: #0f172a; /* slate-900 */
+	width: 100%;
+}
+
+/* Đảm bảo tất cả các container đều có background tối */
+* {
+	box-sizing: border-box;
+}

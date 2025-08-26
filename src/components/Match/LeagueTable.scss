@@ -1,0 +1,276 @@
+.league-table {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	margin-top: 20px;
+
+	.table-header {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		padding: 20px;
+		text-align: center;
+
+		h2 {
+			margin: 0;
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+	}
+
+	.loading-container,
+	.error-container,
+	.no-league-selected,
+	.no-data {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 60px 20px;
+		text-align: center;
+		color: #666;
+
+		.loading-spinner {
+			font-size: 2rem;
+			margin-bottom: 10px;
+			animation: spin 1s linear infinite;
+		}
+
+		.error-icon {
+			font-size: 2rem;
+			margin-bottom: 10px;
+		}
+
+		p {
+			margin: 0;
+			font-size: 1rem;
+		}
+	}
+
+	.table-container {
+		overflow-x: auto;
+
+		.standings-table {
+			width: 100%;
+			border-collapse: collapse;
+			font-size: 0.9rem;
+
+			thead {
+				background: #f8f9fa;
+				border-bottom: 2px solid #e9ecef;
+
+				th {
+					padding: 15px 8px;
+					text-align: center;
+					font-weight: 600;
+					color: #495057;
+					border-right: 1px solid #e9ecef;
+
+					&:first-child {
+						text-align: center;
+						width: 50px;
+					}
+
+					&:nth-child(2) {
+						text-align: left;
+						width: 200px;
+					}
+
+					&:last-child {
+						border-right: none;
+					}
+				}
+			}
+
+			tbody {
+				tr {
+					border-bottom: 1px solid #f1f3f4;
+					transition: background-color 0.2s ease;
+
+					&:hover {
+						background-color: #f8f9fa;
+					}
+
+					&.champions-league {
+						background-color: rgba(76, 175, 80, 0.1);
+						border-left: 4px solid #4caf50;
+
+						&:hover {
+							background-color: rgba(76, 175, 80, 0.15);
+						}
+					}
+
+					&.europa-league {
+						background-color: rgba(255, 193, 7, 0.1);
+						border-left: 4px solid #ffc107;
+
+						&:hover {
+							background-color: rgba(255, 193, 7, 0.15);
+						}
+					}
+
+					&.relegation {
+						background-color: rgba(244, 67, 54, 0.1);
+						border-left: 4px solid #f44336;
+
+						&:hover {
+							background-color: rgba(244, 67, 54, 0.15);
+						}
+					}
+
+					td {
+						padding: 12px 8px;
+						text-align: center;
+						border-right: 1px solid #f1f3f4;
+						vertical-align: middle;
+
+						&:first-child {
+							font-weight: 600;
+							color: #495057;
+						}
+
+						&:nth-child(2) {
+							text-align: left;
+							padding-left: 15px;
+						}
+
+						&:last-child {
+							border-right: none;
+						}
+
+						&.position {
+							font-weight: 700;
+							color: #212529;
+						}
+
+						&.points {
+							font-weight: 700;
+							color: #28a745;
+							font-size: 1.1rem;
+						}
+
+						&.positive {
+							color: #28a745;
+							font-weight: 600;
+						}
+
+						&.negative {
+							color: #dc3545;
+							font-weight: 600;
+						}
+
+						.team-info {
+							display: flex;
+							align-items: center;
+							gap: 10px;
+
+							.team-crest {
+								width: 24px;
+								height: 24px;
+								object-fit: contain;
+								border-radius: 4px;
+							}
+
+							.team-name {
+								font-weight: 500;
+								color: #212529;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+// Responsive design
+@media (max-width: 768px) {
+	.league-table {
+		.table-container {
+			.standings-table {
+				font-size: 0.8rem;
+
+				thead th {
+					padding: 10px 4px;
+
+					&:nth-child(2) {
+						width: 150px;
+					}
+				}
+
+				tbody td {
+					padding: 8px 4px;
+
+					&:nth-child(2) {
+						padding-left: 10px;
+					}
+
+					.team-info {
+						gap: 6px;
+
+						.team-crest {
+							width: 20px;
+							height: 20px;
+						}
+
+						.team-name {
+							font-size: 0.85rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.league-table {
+		.table-header h2 {
+			font-size: 1.2rem;
+		}
+
+		.table-container {
+			.standings-table {
+				font-size: 0.75rem;
+
+				thead th {
+					padding: 8px 2px;
+
+					&:nth-child(2) {
+						width: 120px;
+					}
+				}
+
+				tbody td {
+					padding: 6px 2px;
+
+					&:nth-child(2) {
+						padding-left: 8px;
+					}
+
+					.team-info {
+						gap: 4px;
+
+						.team-crest {
+							width: 18px;
+							height: 18px;
+						}
+
+						.team-name {
+							font-size: 0.8rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

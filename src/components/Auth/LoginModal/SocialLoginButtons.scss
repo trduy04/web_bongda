@@ -1,0 +1,49 @@
+.login-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-bottom: 1.5rem;
+
+	.social-login-btn {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem 1.25rem;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 10px;
+		background: rgba(255, 255, 255, 0.05);
+		color: white;
+		font-size: 0.95rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.1);
+			border-color: rgba(255, 255, 255, 0.3);
+		}
+
+		.social-icon {
+			font-size: 1.25rem;
+			font-weight: bold;
+			width: 24px;
+			text-align: center;
+		}
+
+		&.google-btn .social-icon {
+			color: #4285f4;
+		}
+
+		&.apple-btn .social-icon {
+			color: #000;
+		}
+
+		&.facebook-btn .social-icon {
+			color: #1877f2;
+		}
+
+		&.email-btn .social-icon {
+			color: #ea4335;
+		}
+	}
+}
