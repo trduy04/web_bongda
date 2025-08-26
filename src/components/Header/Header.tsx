@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './Header.css'
 import { LoginModal } from '../Auth'
+import { useAuth } from '../../contexts/AuthContext'
 
 interface HeaderProps {
 	onSearch: (query: string) => void
@@ -12,6 +13,7 @@ function Header({ onSearch }: HeaderProps) {
 	const navigate = useNavigate()
 	const [searchQuery, setSearchQuery] = useState('')
 	const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
+	const { user, isAuthenticated, logout } = useAuth()
 
 	const sports = [
 		{ id: 'quan-tam', icon: '⭐', name: 'QUAN TÂM', count: '0', path: '/quan-tam' },
@@ -37,6 +39,10 @@ function Header({ onSearch }: HeaderProps) {
 
 	const handleCloseModal = () => {
 		setIsLoginModalOpen(false)
+	}
+
+	const handleLogout = () => {
+		logout()
 	}
 
 	const handleFootballClick = () => {
@@ -70,9 +76,18 @@ function Header({ onSearch }: HeaderProps) {
 						</button>
 					</form>
 					
-					<button className="action-btn login-btn" onClick={handleLoginClick}>
-						👤 ĐĂNG NHẬP
-					</button>
+					{isAuthenticated ? (
+						<div className="user-section">
+							<span className="user-name">👤 {user?.name}</span>
+							<button className="action-btn logout-btn" onClick={handleLogout}>
+								🚪 ĐĂNG XUẤT
+							</button>
+						</div>
+					) : (
+						<button className="action-btn login-btn" onClick={handleLoginClick}>
+							👤 ĐĂNG NHẬP
+						</button>
+					)}
 					
 					<button className="action-btn">
 						☰

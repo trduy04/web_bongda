@@ -125,6 +125,27 @@
 	background: #dc2626;
 }
 
+.user-section {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.user-name {
+	color: #fff;
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.action-btn.logout-btn {
+	background: #dc3545;
+	border-color: #dc3545;
+}
+
+.action-btn.logout-btn:hover {
+	background: #c82333;
+}
+
 .navigation {
 	padding: 0.75rem 2rem;
 	display: flex;
